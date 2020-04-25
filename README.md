@@ -191,7 +191,49 @@ org.jitsi.videobridge.xmpp.ComponentImpl.level=WARNING
 - edit serveral place
 - found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 
-1) enable 
+1) start docker-compose
 
-```javascript
+2) copy /usr/share/jitsi-meet/css/all.css to $CONFIG/.jitsi-meet-cfg/web/
+
+```bash
+
+# change to config/web dir
+cd && cd $CONFIG/.jitsi-meet-cfg/web
+
+# docker cp <container_id od web container>:/usr/share/jitsi-meet/css/all.css all.css
+# e.g.
+docker cp 476:/usr/share/jitsi-meet/css/all.css all.css
+```
+
+3) add add footer cell
+
+```bash
+echo ".welcome .welcome-watermark{position:absolute;width:100%;height:auto}
+#footer{margin-top:20px;margin-bottom:20px;font-size:14px}" | tee -a  all.css 
+```
+
+4) copy welcome page (optional)
+
+```bash
+cd && cd $CONFIG/.jitsi-meet-cfg/web
+# docker cp <container_id od web container>:/usr/share/jitsi-meet/static/welcomePageAdditionalContent.html welcomePageAdditionalContent.html
+# e.g.
+docker cp 476:/usr/share/jitsi-meet/static/welcomePageAdditionalContent.html welcomePageAdditionalContent.html
+
+```
+
+5) edit welcome page
+
+```bash
+ cat << EOF >welcomePageAdditionalContent.html
+ <template id = "welcome-page-additional-content-template">
+   <div id="footer"> 
+      <center>Betrieben von Kuketz-Blog | <a href="https://www.kuketz-blog.de/impressum/">Impressum</a> | <a href="https://www.kuketz-blog.de/datenschutzhinweis-kuketz-meet-de/">Datenschutzhinweis</a> | <a href="https://www.kuketz-blog.de/jitsi-meet-erste-hilfe-bei-problemen/">Erste Hilfe bei Problemen</a></center>
+      <center>Diese Jitsi-Instanz ist <a href="https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/">datenschutzfreundlich</a> und nutzt <strong>nicht</strong> die Google STUN-Server.</center>
+   </div>
+</template>
+EOF
+```
+
+
 
