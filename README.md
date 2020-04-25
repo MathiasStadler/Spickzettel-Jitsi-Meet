@@ -84,11 +84,104 @@ channelLastN: 4 = show videos of last 4 active speakers only although everyone h
     channelLastN: 4,
 ```
 
-## use STUN and TURN server
+## use german STUN and TURN server
+
 - edit in $HOME/.jitsi-meet-cfg/web/config.js
+- found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+- found here too https://blog.wydler.eu/2020/03/22/einrichten-von-jitsi-meet-kostenlose-videokonferenzen-fuer-alle/
+- STUN server explanation https://de.wikipedia.org/wiki/Session_Traversal_Utilities_for_NAT
+- TURN server explanation https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT
 
 ```txt
 // Use XEP-0215 to fetch STUN and TURN servers.
     // useStunTurn: true,
     useStunTurn: true,
+
+// and
+
+p2p: {
+        // Enables peer to peer mode. When enabled the system will try to
+        // establish a direct connection when there are exactly 2 participants
+        // in the room. If that succeeds the conference will stop sending data
+        // through the JVB and use the peer to peer connection instead. When a
+        // 3rd participant joins the conference will be moved back to the JVB
+        // connection.
+        enabled: true,
+
+        // Use XEP-0215 to fetch STUN and TURN servers.
+        // useStunTurn: true,
+        useStunTurn: true,
+
+        // The STUN servers that will be used in the peer to peer connections
+        stunServers: [
+
+            // { urls: 'stun:meet.jitsi:4446' },
+            { urls: 'stun.1und1.de:3478' },
+            { urls: 'stun.t-online.de:3478' },
+            { urls: 'stun.nextcloud.com:443' }
+        ],
+```
+
+## disable Third Party Requests
+
+- edit in $HOME/.jitsi-meet-cfg/web/config.js
+- found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+
+
+```txt
+// Privacy
+    //
+
+    // If third party requests are disabled, no other server will be contacted.
+    // This means avatars will be locally generated and callstats integration
+    // will not function.
+    disableThirdPartyRequests: true,
+```
+
+
+## Logging reduzieren
+
+- edit in $HOME/.jitsi-meet-cfg/jvb/logging.properties
+- found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+- docker version
+
+```java
+# .level=INFO
+.level=WARNING
+
+# org.jitsi.videobridge.xmpp.ComponentImpl.level=FINE
+org.jitsi.videobridge.xmpp.ComponentImpl.level=WARNING
+```
+
+## AVOID MOBILE_APP_PROMO
+
+
+- edit in $HOME/.jitsi-meet-cfg/web/interfaces-config.js
+- found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+
+```javascript
+/**
+     * Whether the mobile app Jitsi Meet is to be promoted to participants
+     * attempting to join a conference in a mobile Web browser. If
+     * {@code undefined}, defaults to {@code true}.
+     *
+     * @type {boolean}
+     */
+    //MOBILE_APP_PROMO: false,
+    MOBILE_APP_PROMO: true,
+```
+
+## change link form play strore to the f-droid downlaown page
+
+- edit in $HOME/.jitsi-meet-cfg/web/interfaces-config.js
+- found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+- f-droid version tracker free
+
+```javascript
+/**
+     * Specify custom URL for downloading android mobile app.
+     */
+    // MOBILE_DOWNLOAD_LINK_ANDROID: 'https://play.google.com/store/apps/details?id=org.jitsi.meet',
+    MOBILE_DOWNLOAD_LINK_ANDROID: 'https://f-droid.org/en/packages/org.jitsi.meet/'
+
 ```
