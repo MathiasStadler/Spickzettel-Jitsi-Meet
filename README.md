@@ -185,3 +185,13 @@ org.jitsi.videobridge.xmpp.ComponentImpl.level=WARNING
     MOBILE_DOWNLOAD_LINK_ANDROID: 'https://f-droid.org/en/packages/org.jitsi.meet/'
 
 ```
+
+## add Datenschutzerklärung
+
+- edit serveral place
+- found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
+
+1) enable 
+
+```javascript
+
