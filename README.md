@@ -228,12 +228,21 @@ docker cp 476:/usr/share/jitsi-meet/static/welcomePageAdditionalContent.html wel
  cat << EOF >welcomePageAdditionalContent.html
  <template id = "welcome-page-additional-content-template">
    <div id="footer"> 
-      <center>Betrieben von Kuketz-Blog | <a href="https://www.kuketz-blog.de/impressum/">Impressum</a> | <a href="https://www.kuketz-blog.de/datenschutzhinweis-kuketz-meet-de/">Datenschutzhinweis</a> | <a href="https://www.kuketz-blog.de/jitsi-meet-erste-hilfe-bei-problemen/">Erste Hilfe bei Problemen</a></center>
+      <center>Betrieben von Mathias Stadler | <a href="https://www.kuketz-blog.de/impressum/">Impressum</a> | <a href="https://www.kuketz-blog.de/datenschutzhinweis-kuketz-meet-de/">Datenschutzhinweis</a> | <a href="https://www.kuketz-blog.de/jitsi-meet-erste-hilfe-bei-problemen/">Erste Hilfe bei Problemen</a></center>
       <center>Diese Jitsi-Instanz ist <a href="https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/">datenschutzfreundlich</a> und nutzt <strong>nicht</strong> die Google STUN-Server.</center>
    </div>
 </template>
 EOF
 ```
 
+6) add in meet location alias
+
+- edit $CONFIG/.jitsi-meet-cfg/web/nginx/meet.conf
+
+1) add at the end of file
+
+```bash
+
+```
 
 
