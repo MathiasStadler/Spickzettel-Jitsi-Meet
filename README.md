@@ -26,14 +26,15 @@ cd docker-jitsi-meet
 ## config files for docker container
 
 ```bash
-ls -l $HOME/.jitsi-meet-cfg
+ls -l $CONFIG/.jitsi-meet-cfg
 ```
 
+- variable $CONFIG is define in .env
 
 
 ## change resolution / framerate / format for 
 
-- edit in $HOME/.jitsi-meet-cfg/web/config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
 - sample for 8 frame per second 360 x 180 save some bandwidth
 -  form here @TODO found link
 
@@ -67,7 +68,7 @@ ls -l $HOME/.jitsi-meet-cfg
 
 ## 
 
-- edit in $HOME/.jitsi-meet-cfg/web/config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 - explain here https://community.jitsi.org/t/what-exactly-is-the-effect-of-channellastn/25244
 - save bandwidth 
@@ -86,7 +87,7 @@ channelLastN: 4 = show videos of last 4 active speakers only although everyone h
 
 ## use german STUN and TURN server
 
-- edit in $HOME/.jitsi-meet-cfg/web/config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 - found here too https://blog.wydler.eu/2020/03/22/einrichten-von-jitsi-meet-kostenlose-videokonferenzen-fuer-alle/
 - STUN server explanation https://de.wikipedia.org/wiki/Session_Traversal_Utilities_for_NAT
@@ -124,7 +125,7 @@ p2p: {
 
 ## disable Third Party Requests
 
-- edit in $HOME/.jitsi-meet-cfg/web/config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 
 
@@ -141,7 +142,7 @@ p2p: {
 
 ## Logging reduzieren
 
-- edit in $HOME/.jitsi-meet-cfg/jvb/logging.properties
+- edit in $CONFIG/.jitsi-meet-cfg/jvb/logging.properties
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 - docker version
 
@@ -156,7 +157,7 @@ org.jitsi.videobridge.xmpp.ComponentImpl.level=WARNING
 ## AVOID MOBILE_APP_PROMO
 
 
-- edit in $HOME/.jitsi-meet-cfg/web/interfaces-config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/interfaces-config.js
 - found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 
 ```javascript
@@ -173,7 +174,7 @@ org.jitsi.videobridge.xmpp.ComponentImpl.level=WARNING
 
 ## change link form play strore to the f-droid downlaown page
 
-- edit in $HOME/.jitsi-meet-cfg/web/interfaces-config.js
+- edit in $CONFIG/.jitsi-meet-cfg/web/interfaces-config.js
 - found here - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 - f-droid version tracker free
 
@@ -252,7 +253,6 @@ location = /static/welcomePageAdditionalContent.html {
 ```
 
 8 ) clear cache on your browser
-
 
 9) (optional) check with curl it is work
 
