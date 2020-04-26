@@ -398,3 +398,21 @@ NATIVE_APP_NAME: 'Familie Stadler Ottobrunn',
     enableClosePage: true,
 ```
 
+## disable invite function
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- uncomment
+
+```javascript
+// Disables all invite functions from the app (share, invite, dial out...etc)
+disableInviteFunctions: true,
+```
+
+## disable store old name in recents list
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- uncomment
+
+```javascript
+// Disables storing the room name to the recents list
+doNotStoreRoom: true,
+```
