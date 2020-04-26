@@ -417,7 +417,15 @@ disableInviteFunctions: true,
 doNotStoreRoom: true,
 ```
 
+## test ssl
+
+- use url https://www.ssllabs.com/ssltest/index.html
+- show result
+
+
+
 
 https://decatec.de/home-server/jitsi-meet-videokonferenz-system-unter-ubuntu-server-mit-nginx/
 
 
+https://decatec.de/home-server/tlsv1-3-unter-ubuntu-server-18-04-lts-mit-nginx/
