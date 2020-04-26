@@ -385,3 +385,16 @@ NATIVE_APP_NAME: 'Familie Stadler Ottobrunn',
     // are requested again.
     enableLayerSuspension: true,
 ```
+
+## enable close page
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- uncomment
+
+```javascript
+// Enabling the close page will ignore the welcome page redirection when
+    // a call is hangup.
+    // enableClosePage: false,
+    enableClosePage: true,
+```
+
