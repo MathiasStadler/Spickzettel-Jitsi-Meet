@@ -37,7 +37,7 @@ ls -l $HOME/.jitsi-meet-cfg
 - sample for 8 frame per second 360 x 180 save some bandwidth
 -  form here @TODO found link
 
-```bash
+```javascript
 // Video
 
     // Sets the preferred resolution (height) for local video. Defaults to 720.
@@ -72,7 +72,7 @@ ls -l $HOME/.jitsi-meet-cfg
 - explain here https://community.jitsi.org/t/what-exactly-is-the-effect-of-channellastn/25244
 - save bandwidth 
 
-```txt
+```javascript
 channelLastN: -1 = show all participant videos
 channelLastN: 4 = show videos of last 4 active speakers only although everyone has video enabled
 ```
@@ -92,7 +92,7 @@ channelLastN: 4 = show videos of last 4 active speakers only although everyone h
 - STUN server explanation https://de.wikipedia.org/wiki/Session_Traversal_Utilities_for_NAT
 - TURN server explanation https://en.wikipedia.org/wiki/Traversal_Using_Relays_around_NAT
 
-```txt
+```javascript
 // Use XEP-0215 to fetch STUN and TURN servers.
     // useStunTurn: true,
     useStunTurn: true,
@@ -128,7 +128,7 @@ p2p: {
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 
 
-```txt
+```javascript
 // Privacy
     //
 
