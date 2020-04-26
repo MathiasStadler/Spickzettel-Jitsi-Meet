@@ -416,3 +416,8 @@ disableInviteFunctions: true,
 // Disables storing the room name to the recents list
 doNotStoreRoom: true,
 ```
+
+
+https://decatec.de/home-server/jitsi-meet-videokonferenz-system-unter-ubuntu-server-mit-nginx/
+
+
