@@ -126,6 +126,7 @@ p2p: {
 ## disable Third Party Requests
 
 - edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- uncomment
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 
 
@@ -139,12 +140,12 @@ p2p: {
     disableThirdPartyRequests: true,
 ```
 
-
-## Logging reduzieren
+## increase log level / Logging reduzieren
 
 - edit in $CONFIG/.jitsi-meet-cfg/jvb/logging.properties
 - found here https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/
 - docker version
+- not log ip address of clients
 
 ```java
 # .level=INFO
@@ -301,4 +302,63 @@ LANG_DETECTION: true, // Allow i18n to detect the system language
     defaultLanguage: 'de',
 ```
 
+## hide jitsi logo
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+- found here https://blog.wydler.eu/2020/03/22/einrichten-von-jitsi-meet-kostenlose-videokonferenzen-fuer-alle/#footer-auf-der-startseite-ergaenzen
+
+```javascript
+// SHOW_JITSI_WATERMARK: true,
+SHOW_JITSI_WATERMARK: false,
+
+// if watermark is disabled by default, it can be shown only for guests
+    //SHOW_WATERMARK_FOR_GUESTS: true,
+    SHOW_WATERMARK_FOR_GUESTS: false,
+```
+
+## change title in browser window
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+- found here https://blog.wydler.eu/2020/03/22/einrichten-von-jitsi-meet-kostenlose-videokonferenzen-fuer-alle/#footer-auf-der-startseite-ergaenzen
+
+```javascript
+// APP_NAME: 'Jitsi Meet',
+APP_NAME: 'Familie Stadler Ottobrunn',
+// NATIVE_APP_NAME: 'Jitsi Meet',
+NATIVE_APP_NAME: 'Familie Stadler Ottobrunn',
+```
+
+## disable button in menu
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+- delete not wanted button
+- e.g livestreaming and recording
+
+```javascript
+/**
+     * The name of the toolbar buttons to display in the toolbar. If present,
+     * the button will display. Exceptions are "livestreaming" and "recording"
+     * which also require being a moderator and some values in config.js to be
+     * enabled. Also, the "profile" button will not display for user's with a
+     * jwt.
+     */
+    //TOOLBAR_BUTTONS: [
+    //    'microphone', 'camera', 'desktop', 'fullscreen',
+    //    'fodeviceselection', 'hangup', 'profile', 'info', 'chat', 'recording',
+    //    'livestreaming', 'etherpad', 'sharedvideo', 'settings', 'raisehand',
+    //    'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
+    //    'tileview', 'videobackgroundblur', 'download', 'help', 'mute-everyone',
+    //    'e2ee'
+    //],
+
+    TOOLBAR_BUTTONS: [
+        'microphone', 'camera', 'desktop', 'fullscreen',
+        'fodeviceselection', 'hangup', 'profile', 'info', 'chat',
+        'etherpad', 'sharedvideo', 'settings', 'raisehand',
+        'videoquality', 'filmstrip', 'invite', 'feedback', 'stats', 'shortcuts',
+        'tileview', 'download', 'help', 'mute-everyone',
+        'e2ee'
+    ],
+
+```
 
