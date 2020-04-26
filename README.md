@@ -256,4 +256,49 @@ location = /static/welcomePageAdditionalContent.html {
 
 9) (optional) check with curl it is work
 
+## set default user name
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+
+```javascript
+// DEFAULT_REMOTE_DISPLAY_NAME: 'Fellow Jitster',
+    DEFAULT_REMOTE_DISPLAY_NAME: 'NEW USER',
+```
+
+## set local display name
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+
+```javascript
+// DEFAULT_LOCAL_DISPLAY_NAME: 'me',
+    DEFAULT_LOCAL_DISPLAY_NAME: 'ich',
+```
+
+## set off auto generate room name
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+
+```javascript
+// GENERATE_ROOMNAMES_ON_WELCOME_PAGE: true,
+    GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
+```
+
+## enable  lang detection 
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/interface_config.js
+
+```javascript
+// LANG_DETECTION: false, // Allow i18n to detect the system language
+LANG_DETECTION: true, // Allow i18n to detect the system language
+```
+
+## set default lang
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+
+```javascript
+// Default language for the user interface.
+    defaultLanguage: 'de',
+```
+
 
