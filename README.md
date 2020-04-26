@@ -362,3 +362,13 @@ NATIVE_APP_NAME: 'Familie Stadler Ottobrunn',
 
 ```
 
+## force to set a nick name at start of videoconferencing
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- uncomment
+
+```javascript
+// Require users to always specify a display name.
+    requireDisplayName: true,
+```
+
