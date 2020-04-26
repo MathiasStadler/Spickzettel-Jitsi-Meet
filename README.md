@@ -372,3 +372,16 @@ NATIVE_APP_NAME: 'Familie Stadler Ottobrunn',
     requireDisplayName: true,
 ```
 
+
+## enable layer suspension
+
+- edit in $CONFIG/.jitsi-meet-cfg/web/config.js
+- description here https://jitsi.org/blog/new-off-stage-layer-suppression-feature/
+- save cpu and bandwidth
+
+```javascript
+// Enable / disable layer suspension.  If enabled, endpoints whose HD
+    // layers are not in use will be suspended (no longer sent) until they
+    // are requested again.
+    enableLayerSuspension: true,
+```
