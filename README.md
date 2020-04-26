@@ -228,21 +228,32 @@ docker cp 476:/usr/share/jitsi-meet/static/welcomePageAdditionalContent.html wel
  cat << EOF >welcomePageAdditionalContent.html
  <template id = "welcome-page-additional-content-template">
    <div id="footer"> 
-      <center>Betrieben von Mathias Stadler | <a href="https://www.kuketz-blog.de/impressum/">Impressum</a> | <a href="https://www.kuketz-blog.de/datenschutzhinweis-kuketz-meet-de/">Datenschutzhinweis</a> | <a href="https://www.kuketz-blog.de/jitsi-meet-erste-hilfe-bei-problemen/">Erste Hilfe bei Problemen</a></center>
-      <center>Diese Jitsi-Instanz ist <a href="https://www.kuketz-blog.de/jitsi-meet-server-einstellungen-fuer-einen-datenschutzfreundlichen-betrieb/">datenschutzfreundlich</a> und nutzt <strong>nicht</strong> die Google STUN-Server.</center>
+      <center>Betrieben von Mathias Stadler | <a href="">Impressum</a> | <a href="">Datenschutzhinweis</a> | <a href="">Erste Hilfe bei Problemen</a></center>
+      <center>Diese Jitsi-Instanz ist <a href="">datenschutzfreundlich</a> und nutzt <strong>nicht</strong> die Google STUN-Server.</center>
    </div>
 </template>
 EOF
 ```
+6) edit the link for page and create the pages if necessary 
 
-6) add in meet location alias
+7) add in meet location alias
 
 - edit $CONFIG/.jitsi-meet-cfg/web/nginx/meet.conf
-
-1) add at the end of file
+- add to the end of file
 
 ```bash
+location = /css/all.css {
+        alias /config/all.css;
+        }
 
+location = /static/welcomePageAdditionalContent.html {
+        alias /config/welcomePageAdditionalContent.html;
+        }
 ```
+
+8 ) clear cache on your browser
+
+
+9) (optional) check with curl it is work
 
 
